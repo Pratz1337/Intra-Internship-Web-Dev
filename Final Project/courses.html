@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIT Admin Dashboard - Courses</title>
+    <link rel="stylesheet" href="courses.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>RIT Admin Dashboard</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="students.html"><i class="fas fa-user-graduate"></i> Students</a></li>
+                <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
+                <li><a href="courses.html" class="active"><i class="fas fa-book"></i> Courses</a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> Exams</a></li>
+                <li><a href="#"><i class="fas fa-book-reader"></i> Library</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2>Courses</h2>
+                <div class="user-wrapper">
+                    <img src="user.png" width="30" height="30" alt="user">
+                    <div>
+                        <h4>Dr. N.V.R. Naidu</h4>
+                        <small>Principal</small>
+                    </div>
+                </div>
+            </header>
+            <section class="courses-container">
+                <h3>Course List</h3>
+                <table class="courses-table">
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th>Department</th>
+                            <th>Credits</th>
+                            <th>Semester</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="courses.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIT Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>RIT Admin Dashboard</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i>Dashboard</a></li>
+                <li><a href="students.html" ><i class="fas fa-user-graduate"></i>Students</a></li>
+                <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i>Teachers</a></li>
+                <li><a href="courses.html"><i class="fas fa-book"></i>Courses</a></li>
+                <li><a href="exams.html"><i class="fas fa-file-alt"></i>Exams</a></li>
+                <li><a href="library.html"><i class="fas fa-book-reader"></i>Library</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i>Settings</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2>Dashboard</h2>
+                <div class="user-wrapper">
+                    <img src="user.png" width="30" height="30" alt="user">
+                    <div>
+                        <h4>Dr. N.V.R. Naidu</h4>
+                        <small>Principal</small>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Cards Section -->
+            <section class="cards">
+                <div class="card">
+                    <h3>Total Students</h3>
+                    <p>5000</p>
+                </div>
+                <div class="card">
+                    <h3>Total Teachers</h3>
+                    <p>350</p>
+                </div>
+                <div class="card">
+                    <h3>Courses Offered</h3>
+                    <p>30</p>
+                </div>
+                <div class="card">
+                    <h3>Upcoming Exams</h3>
+                    <p>8</p>
+                </div>
+            </section>
+
+            <!-- Table Section -->
+            <section class="recent">
+                <div class="recent-students">
+                    <h3>Recent Admissions</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Course</th>
+                                <th>Date of Admission</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
