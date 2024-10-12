@@ -19,15 +19,17 @@ body {
 .sidebar {
     width: 250px;
     background-color: #34495e;
-    color: white;
-    height: 100vh;
+    color: #ffffff;
+    height: 190vh;
     padding: 20px;
 }
 
 .sidebar-header {
     margin-bottom: 30px;
 }
-
+#studentsGraph{
+    background-color: rgba(144, 243, 243, 0.12);
+}
 .sidebar-header h3 {
     color: #ecf0f1;
     font-size: 22px;

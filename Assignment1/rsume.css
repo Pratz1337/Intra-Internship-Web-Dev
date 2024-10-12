@@ -3,17 +3,17 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
-  background-color: #ccc9c9; /* Optional background color */
+  background-color: #ccc9c9;
 }
 
 .container {
   width: 100%;
-  max-width: 800px; /* Adjust to your preferred width */
+  max-width: 800px;
   padding: 20px;
-  margin-top: 60px; /* Adjust based on the height of your navbar */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Elevates the content */
-  background-color: white; /* Background color for content */
-  border-radius: 8px; /* Rounded corners for a card-like appearance */
+  margin-top: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 8px;
 }
 
 .topnav {
@@ -24,7 +24,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1000; /* Ensure navbar is on top */
+  z-index: 1000;
 }
 
 .topnav a {
@@ -91,5 +91,5 @@ a {
   .stuff {
     width: 100%;
     margin-left: 10px;
-  }
+}
 }

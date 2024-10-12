@@ -20,7 +20,6 @@
                 <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
                 <li><a href="courses.html" class="active"><i class="fas fa-book"></i> Courses</a></li>
                 <li><a href="exams.html"><i class="fas fa-file-alt"></i> Exams</a></li>
-                
                 <li><a onclick="alert('You have been logged out successfully!')"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
             </ul>
         </nav>
@@ -36,13 +35,13 @@
                 </div>
             </header>
             <section class="courses-container">
-                <h3>Departments</h3>
+                <h3 class="SubHeading"> Departments</h3> <button onclick="alert('New Course Added!')" class="addCourse">Add New Course</button>
+
                 <div id="departments-grid" class="departments-grid">
-                    <!-- Department cards will be dynamically inserted here -->
                 </div>
             </section>
         </main>
     </div>
     <script src="courses.js"></script>
 </body>
-</html> 
+</html>
