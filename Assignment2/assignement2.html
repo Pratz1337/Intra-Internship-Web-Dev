@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Multi-Step Registration</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            color: #4a4a4a;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #764ba2;
+        }
+
+        button {
+            background-color: #667eea;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .step {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .progress-step {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #888;
+            position: relative;
+        }
+
+        .progress-step.active {
+            background-color: #667eea;
+            color: white;
+        }
+
+        .progress-step::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #f0f0f0;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+
+        .progress-step:last-child::after {
+            display: none;
+        }
+
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .checkbox-group label, .radio-group label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .checkbox-group input, .radio-group input {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="registrationForm">
+            <div class="progress-bar">
+                <div class="progress-step active">1</div>
+                <div class="progress-step">2</div>
+                <div class="progress-step">3</div>
+            </div>
+
+            <div id="step1" class="step active">
+                <h2>Personal Information</h2>
+                <div class="form-group">
+                    <label for="firstName"><i class="fas fa-user"></i> First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName"><i class="fas fa-user"></i> Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword"><i class="fas fa-lock"></i> Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="age"><i class="fas fa-birthday-cake"></i> Age</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-venus-mars"></i> Gender</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="male" required> Male</label>
+                        <label><input type="radio" name="gender" value="female" required> Female</label>
+                        <label><input type="radio" name="gender" value="other" required> Other</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber"><i class="fas fa-phone"></i> Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <button type="button" onclick="nextStep(2)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div id="step2" class="step">
+                <h2>Preferences</h2>
+                <div class="form-group">
+                    <label><i class="fas fa-list-ul"></i> Preferred Session</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="preferredSession" value="Web Development"> Web Development</label>
+                        <label><input type="checkbox" name="preferredSession" value="Data Science"> Data Science</label>
+                        <label><input type="checkbox" name="preferredSession" value="Cybersecurity"> Cybersecurity</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-users"></i> Mode of Participation</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="modeOfParticipation" value="Online" required> Online</label>
+                        <label><input type="radio" name="modeOfParticipation" value="In-Person" required> In-Person</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dietaryRestrictions"><i class="fas fa-utensils"></i> Dietary Restrictions</label>
+                    <textarea id="dietaryRestrictions" name="dietaryRestrictions"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="additionalComments"><i class="fas fa-comment"></i> Additional Comments</label>
+                    <textarea id="additionalComments" name="additionalComments"></textarea>
+                </div>
+                <button type="button" onclick="prevStep(1)"><i class="fas fa-arrow-left"></i> Previous</button>
+                <button type="button" onclick="nextStep(3)">Next <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <div id="step3" class="step">
+                <h2>Confirmation</h2>
+                <div id="confirmationDetails"></div>
+                <button type="button" onclick="prevStep(2)"><i class="fas fa-arrow-left"></i> Previous</button>
+                <button type="submit">Submit <i class="fas fa-check"></i></button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let currentStep = 1;
+
+        function nextStep(step) {
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            document.getElementById(`step${step}`).classList.add('active');
+            document.querySelectorAll('.progress-step')[currentStep - 1].classList.remove('active');
+            document.querySelectorAll('.progress-step')[step - 1].classList.add('active');
+            currentStep = step;
+
+            if (step === 3) {
+                displayConfirmation();
+            }
+        }
+
+        function prevStep(step) {
+            document.getElementById(`step${currentStep}`).classList.remove('active');
+            document.getElementById(`step${step}`).classList.add('active');
+            document.querySelectorAll('.progress-step')[currentStep - 1].classList.remove('active');
+            document.querySelectorAll('.progress-step')[step - 1].classList.add('active');
+            currentStep = step;
+        }
+
+        function displayConfirmation() {
+            const form = document.getElementById('registrationForm');
+            const confirmationDiv = document.getElementById('confirmationDetails');
+            let confirmationHTML = '<h3>Please review your information:</h3>';
+
+            for (let i = 0; i < form.elements.length; i++) {
+                const element = form.elements[i];
+                if (element.name && element.name !== 'confirmPassword') {
+                    if (element.type === 'checkbox' && element.checked) {
+                        confirmationHTML += `<p><strong>${element.name}:</strong> ${element.value}</p>`;
+                    } else if (element.type !== 'checkbox' && element.type !== 'radio') {
+                        confirmationHTML += `<p><strong>${element.name}:</strong> ${element.value}</p>`;
+                    } else if (element.type === 'radio' && element.checked) {
+                        confirmationHTML += `<p><strong>${element.name}:</strong> ${element.value}</p>`;
+                    }
+                }
+            }
+
+            confirmationDiv.innerHTML = confirmationHTML;
+        }
+
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>
