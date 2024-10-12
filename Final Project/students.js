@@ -1,4 +1,3 @@
-// Sample data for semesters, departments, and students
 const semestersData = [
     {
         id: 1,
@@ -89,7 +88,6 @@ function showPopup(semester) {
     popupTitle.textContent = semester.name;
     departmentsContainer.innerHTML = '';
 
-    // Add edit button for the semester in the popup
     const editSemesterBtn = document.createElement('button');
     editSemesterBtn.className = 'edit-semester';
     editSemesterBtn.innerHTML = '<i class="fas fa-edit" title="Edit Semester"></i>';
@@ -121,15 +119,11 @@ function showPopup(semester) {
 }
 
 function editSemester(semester) {
-    // Placeholder function for editing a semester
     alert(`Editing ${semester.name}`);
-    // Here you would typically open a form or modal to edit the semester details
 }
 
 function editDepartment(department) {
-    // Placeholder function for editing a department
     alert(`Editing ${department.name} department`);
-    // Here you would typically open a form or modal to edit the department details
 }
 
 function populateSemesterCards() {

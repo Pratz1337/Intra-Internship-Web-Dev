@@ -1,4 +1,3 @@
-// Sample data for courses
 const coursesData = [
     { code: 'CS201', name: 'Data Structures', department: 'Computer Science', credits: 4, semester: 3 },
     { code: 'CS202', name: 'Algorithms', department: 'Computer Science', credits: 4, semester: 4 },
@@ -67,7 +66,7 @@ function organizeCoursesData(courses) {
 
 function createDepartmentCards(organizedData) {
     const departmentsGrid = document.getElementById('departments-grid');
-    departmentsGrid.innerHTML = ''; // Clear existing content
+    departmentsGrid.innerHTML = ''; 
 
     for (const [department, semesters] of Object.entries(organizedData)) {
         const departmentCard = document.createElement('div');

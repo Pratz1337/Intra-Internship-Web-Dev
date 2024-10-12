@@ -1,4 +1,3 @@
-// Sample data for teachers
 const teachersData = [
     { id: 1, name: 'Dr. Ananya Sharma', department: 'Computer Science', designation: 'Professor', experience: 15 },
     { id: 2, name: 'Prof. Rajesh Kumar', department: 'Electronics', designation: 'Associate Professor', experience: 12 },
@@ -7,7 +6,6 @@ const teachersData = [
     { id: 5, name: 'Dr. Meera Gupta', department: 'Civil', designation: 'Associate Professor', experience: 10 }
 ];
 
-// Function to populate the teachers table
 function populateTeachersTable() {
     const tableBody = document.querySelector('.teachers-table tbody');
     tableBody.innerHTML = '';
@@ -24,10 +22,8 @@ function populateTeachersTable() {
     });
 }
 
-// Function to initialize the page
 function initTeachersPage() {
     populateTeachersTable();
 }
 
-// Run initialization when DOM is loaded
 document.addEventListener('DOMContentLoaded', initTeachersPage);
