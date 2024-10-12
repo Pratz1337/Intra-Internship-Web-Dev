@@ -1,3 +1,29 @@
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.exam-dates {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
 * {
     margin: 0;
     padding: 0;
@@ -88,69 +114,8 @@ header h2 {
 
 .user-wrapper img {
     border-radius: 50%;
-    margin-right: 10px;
-}
+    margin-right: 10px;}
 
-.courses-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.courses-container h3 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.departments-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.department-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.department-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.department-card h4 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-.semester-card {
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    padding: 10px;
-    margin-top: 10px;
-}
-
-.semester-card h5 {
-    color: #34495e;
-    margin-bottom: 5px;
-}
-
-.course-item {
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 8px;
-    margin-bottom: 5px;
-}
-
-.course-item:last-child {
-    margin-bottom: 0;
-}
 
 @media screen and (max-width: 768px) {
     .sidebar {
@@ -161,7 +126,5 @@ header h2 {
         font-size: 20px;
     }
 
-    .departments-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
+    
 }

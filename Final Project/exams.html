@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIT Admin Dashboard - Exams</title>
+    <link rel="stylesheet" href="exams.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>RIT Admin Dashboard</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="students.html"><i class="fas fa-user-graduate"></i> Students</a></li>
+                <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
+                <li><a href="courses.html" ><i class="fas fa-book"></i> Courses</a></li>
+                <li><a href="exams.html" class="active"><i class="fas fa-file-alt"></i> Exams</a></li>
+                
+                <li><a onclick="alert('You have been logged out successfully!')"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h2>Exams</h2>
+                <div class="user-wrapper">
+                    <img src="user.png" width="30" height="30" alt="user">
+                    <div>
+                        <h4>Dr. N.V.R. Naidu</h4>
+                        <small>Principal</small>
+                    </div>
+                </div>
+            </header>
+            <section class="exams-container">
+                <h3>Exam Types</h3>
+                <div class="cards">
+                    <div class="card" onclick="showExams('CIE-1')">
+                        <h4>CIE-1</h4>
+                    </div>
+                    <div class="card" onclick="showExams('CIE-2')">
+                        <h4>CIE-2</h4>
+                    </div>
+                    <div class="card" onclick="showExams('SEE')">
+                        <h4>SEE</h4>
+                    </div>
+                </div>
+                <div id="exam-dates" class="exam-dates">
+                    <!-- Exam dates will be displayed here -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="courses.js"></script>
+    <script>
+        const examData = {
+            'CIE-1': [
+                { subject: 'Mathematics', date: '2024-05-01' },
+                { subject: 'Physics', date: '2024-05-02' },
+                { subject: 'Chemistry', date: '2024-05-03' }
+            ],
+            'CIE-2': [
+                { subject: 'Data Structures', date: '2024-05-10' },
+                { subject: 'Algorithms', date: '2024-05-11' },
+                { subject: 'Operating Systems', date: '2024-05-12' }
+            ],
+            'SEE': [
+                { subject: 'Computer Networks', date: '2024-05-20' },
+                { subject: 'Database Systems', date: '2024-05-21' },
+                { subject: 'Software Engineering', date: '2024-05-22' }
+            ]
+        };
+
+        function showExams(type) {
+            const examDatesDiv = document.getElementById('exam-dates');
+            examDatesDiv.innerHTML = `<h4>${type} Exam Dates:</h4>`;
+            const exams = examData[type];
+            exams.forEach(exam => {
+                const examInfo = document.createElement('p');
+                examInfo.textContent = `${exam.subject}: ${exam.date}`;
+                examDatesDiv.appendChild(examInfo);
+            });
+        }
+    </script>
+</body>
+</html>

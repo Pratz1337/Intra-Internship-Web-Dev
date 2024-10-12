@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <aside class="sidebar">
+        <nav class="sidebar">
             <div class="sidebar-header">
                 <h3>RIT Admin Dashboard</h3>
             </div>
@@ -19,12 +19,11 @@
                 <li><a href="students.html"><i class="fas fa-user-graduate"></i> Students</a></li>
                 <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> Teachers</a></li>
                 <li><a href="courses.html" class="active"><i class="fas fa-book"></i> Courses</a></li>
-                <li><a href="#"><i class="fas fa-file-alt"></i> Exams</a></li>
-                <li><a href="#"><i class="fas fa-book-reader"></i> Library</a></li>
-                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li><a href="exams.html"><i class="fas fa-file-alt"></i> Exams</a></li>
+                
+                <li><a onclick="alert('You have been logged out successfully!')"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
             </ul>
-        </aside>
+        </nav>
         <main class="main-content">
             <header>
                 <h2>Courses</h2>
@@ -37,24 +36,13 @@
                 </div>
             </header>
             <section class="courses-container">
-                <h3>Course List</h3>
-                <table class="courses-table">
-                    <thead>
-                        <tr>
-                            <th>Course Code</th>
-                            <th>Course Name</th>
-                            <th>Department</th>
-                            <th>Credits</th>
-                            <th>Semester</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Table rows will be populated by JavaScript -->
-                    </tbody>
-                </table>
+                <h3>Departments</h3>
+                <div id="departments-grid" class="departments-grid">
+                    <!-- Department cards will be dynamically inserted here -->
+                </div>
             </section>
         </main>
     </div>
     <script src="courses.js"></script>
 </body>
-</html>
+</html> 
